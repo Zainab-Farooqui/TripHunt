@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '../Css/Register.css'
+import "../Css/Register.css"; // Importing CSS
+
 const Register = () => {
   const navigate = useNavigate();
 
@@ -8,10 +9,10 @@ const Register = () => {
     fullName: "",
     email: "",
     phone: "",
-    country: "",
     travelType: "",
     password: "",
     confirmPassword: "",
+    profileImage: null,
   });
 
   const [error, setError] = useState("");
@@ -29,6 +30,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validation
     if (
       !form.fullName ||
       !form.email ||
@@ -50,32 +52,21 @@ const Register = () => {
   };
 
   return (
-    <div
-      className="register-container min-h-screen flex justify-center items-center bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')",
-      }}
-    >
-      <div className="bg-white/80 backdrop-blur-lg shadow-xl p-8 rounded-2xl w-[420px]">
+    <div className="register-container">
 
-        <h1 className="text-3xl font-bold text-center text-blue-700 mb-4">
-          Travel With Us ✈️
-        </h1>
+      <div className="register-card">
+        <h1 className="register-title">Travel With Us ✈️</h1>
+        <h2 className="register-subtitle">Create Your Account</h2>
 
-        <h2 className="text-xl font-semibold text-center mb-4">
-          Create Your Account
-        </h2>
+        {error && <p className="error-msg">{error}</p>}
 
-        {error && <p className="text-red-600 text-sm mb-3">{error}</p>}
+        <form onSubmit={handleSubmit}>
 
-        <form className="RegisterForm"onSubmit={handleSubmit}>
-          
           <input
             type="text"
             name="fullName"
             placeholder="Full Name"
-            className="w-full p-2 border mb-3 rounded-lg"
+            className="register-input"
             onChange={handleChange}
           />
 
@@ -83,7 +74,7 @@ const Register = () => {
             type="email"
             name="email"
             placeholder="Email Address"
-            className="w-full p-2 border mb-3 rounded-lg"
+            className="register-input"
             onChange={handleChange}
           />
 
@@ -91,26 +82,14 @@ const Register = () => {
             type="tel"
             name="phone"
             placeholder="Mobile Number"
-            className="w-full p-2 border mb-3 rounded-lg"
+            className="register-input"
             onChange={handleChange}
           />
 
-          <select
-            name="country"
-            className="w-full p-2 border rounded-lg mb-3"
-            onChange={handleChange}
-          >
-            <option value="">Select Country</option>
-            <option value="India">India</option>
-            <option value="USA">USA</option>
-            <option value="Dubai">Dubai</option>
-            <option value="UK">United Kingdom</option>
-            <option value="Australia">Australia</option>
-          </select>
 
           <select
             name="travelType"
-            className="w-full p-2 border rounded-lg mb-3"
+            className="register-select"
             onChange={handleChange}
           >
             <option value="">Preferred Travel Type</option>
@@ -122,11 +101,12 @@ const Register = () => {
           </select>
 
           
+
           <input
             type="password"
             name="password"
             placeholder="Password"
-            className="w-full p-2 border mb-3 rounded-lg"
+            className="register-input"
             onChange={handleChange}
           />
 
@@ -134,31 +114,18 @@ const Register = () => {
             type="password"
             name="confirmPassword"
             placeholder="Confirm Password"
-            className="w-full p-2 border mb-3 rounded-lg"
+            className="register-input"
             onChange={handleChange}
           />
 
-          <div className="flex items-center mb-3">
-            <input type="checkbox" className="mr-2" required />
-            <p className="text-sm">I agree to the Terms and Privacy Policy</p>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-semibold"
-          >
+          <button type="submit" className="register-btn">
             Register
           </button>
         </form>
 
-        <p className="mt-4 text-center text-sm">
+        <p className="register-footer">
           Already have an account?{" "}
-          <span
-            className="text-blue-700 cursor-pointer font-semibold"
-            onClick={() => navigate("/login")}
-          >
-            Login
-          </span>
+          <span onClick={() => navigate("/login")}>Login</span>
         </p>
       </div>
     </div>

@@ -1,90 +1,72 @@
-/* ===== FULL BACKGROUND ===== */
+/* Ensure form centers correctly */
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* FULL BACKGROUND + CENTERING */
 .register-container {
-  min-height: 100vh;
-   width: 100%;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
   background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
 }
-.RegisterForm{
-    display: flex;
-    flex-direction: column;
-}
-/* ===== GLASS CARD ===== */
+
+/* GLASS CARD */
 .register-card {
   width: 420px;
-  padding: 35px;
-  border-radius: 20px;
-
+  padding: 32px;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
-
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   animation: fadeIn 0.6s ease-in-out;
 }
 
-/* ===== HEADINGS ===== */
+/* HEADINGS */
 .register-title {
   text-align: center;
-  font-size: 30px;
+  font-size: 28px;
   color: #0b5ed7;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .register-subtitle {
   text-align: center;
   font-size: 18px;
-  margin-bottom: 20px;
-  font-weight: 500;
+  margin-bottom: 18px;
 }
 
-/* ===== INPUTS ===== */
-.register-input {
+/* INPUTS */
+.register-input,
+.register-select {
   width: 100%;
   padding: 12px;
+  margin-bottom: 14px;
   border-radius: 10px;
   border: 1px solid #b7b7b7;
-  margin-bottom: 14px;
   outline: none;
   font-size: 14px;
   transition: 0.2s;
 }
 
-.register-input:focus {
+.register-input:focus,
+.register-select:focus {
   border-color: #0b5ed7;
   box-shadow: 0 0 5px rgba(11, 94, 215, 0.4);
 }
 
-/* ===== SELECT DROPDOWN ===== */
-.register-select {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #b7b7b7;
-  margin-bottom: 14px;
-  outline: none;
-  font-size: 14px;
-  background: white;
-  cursor: pointer;
-}
-
-.register-select:focus {
-  border-color: #0b5ed7;
-}
-
-/* ===== FILE UPLOAD ===== */
+/* FILE UPLOAD */
 .file-label {
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   display: block;
 }
 
@@ -94,20 +76,18 @@
   border-radius: 10px;
   border: 1px solid #b7b7b7;
   margin-bottom: 14px;
-  cursor: pointer;
 }
 
-/* ===== BUTTON ===== */
+/* BUTTON */
 .register-btn {
   width: 100%;
-  background: #0b5ed7;
   padding: 12px;
   border-radius: 10px;
+  background: #0b5ed7;
   color: white;
-  cursor: pointer;
   border: none;
   font-weight: 600;
-  font-size: 15px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -115,34 +95,29 @@
   background: #0845a9;
 }
 
-/* ===== ERROR MESSAGE ===== */
+/* ERROR */
 .error-msg {
   color: red;
-  font-size: 13px;
-  margin-bottom: 12px;
   text-align: center;
+  margin-bottom: 12px;
+  font-size: 14px;
 }
 
-/* ===== FOOTER LINK ===== */
+/* FOOTER */
 .register-footer {
   text-align: center;
-  font-size: 14px;
   margin-top: 15px;
+  font-size: 14px;
 }
 
 .register-footer span {
   color: #0b5ed7;
-  cursor: pointer;
   font-weight: 600;
+  cursor: pointer;
 }
 
-/* ===== ANIMATION ===== */
+/* ANIMATION */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

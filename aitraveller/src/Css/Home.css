@@ -1,0 +1,231 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+.hero {
+  height: 70vh;
+  width: 100%;
+  background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dark overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  top: 0;
+  left: 0;
+}
+
+/* Text */
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 22px;
+  font-weight: 300;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  font-style: italic;
+}
+
+/* Search Box Container */
+.search-box {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap; /* stack on small screens */
+  gap:20px
+}
+
+/* Input fields */
+.search-box input {
+  width: 200px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #0078ff;  /* blue border */
+  border-right: none;          /* no double border between fields */
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.search-box input:last-child {
+  border-radius: 0 30px 30px 0;
+  border-right: 2px solid #0078ff;
+}
+
+/* Focus effect */
+.search-box input:focus {
+  border-color: #005fcc;
+  box-shadow: 0 0 5px rgba(0, 120, 255, 0.5);
+}
+
+/* Search Button */
+.search-box button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background: #0078ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #005fcc;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 500px) {
+  .search-box input,
+  .search-box button {
+    width: 100%;
+    border-radius: 30px;
+    border-right: 2px solid #0078ff;
+    margin: 5px 0;
+  }
+
+  .search-box button {
+    border-radius: 30px;
+  }
+}
+
+
+
+/* Recommendation Section */
+.recommend-section {
+  padding: 50px 40px;
+  text-align: center;
+  background: #f8f9fb;
+}
+
+.recommend-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Card layout */
+.recommend-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Card Styles */
+.card {
+  width: 250px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.12);
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 12px 0 5px;
+  color: #0078ff;
+}
+
+.card p {
+  font-size: 14px;
+  padding: 0 12px 15px;
+  color: #444;
+}
+
+
+/* Footer Styling */
+.footer {
+  background: #0b0f1a;
+  color: white;
+  padding: 50px 40px 20px;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Columns */
+.footer-col {
+  width: 230px;
+}
+
+.footer-col h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #0078ff;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #00aaff;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-col ul li:hover {
+  color: #0078ff;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 30px;
+  padding-top: 12px;
+  font-size: 14px;
+  color: #bbb;
+}
